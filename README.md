@@ -1,6 +1,6 @@
 # Keyword Highlighter Chrome Extension
 
-This Chrome extension automatically highlights configured words when a page loads.
+Chrome extension that automatically highlights keyword groups on web pages, with color-coded results and per-color match navigation.
 
 ## Features
 
@@ -9,9 +9,9 @@ This Chrome extension automatically highlights configured words when a page load
 - Click the extension icon to open a settings popup with comma-separated keywords and highlight colors.
 - Add keyword groups with the **+** button and choose red, blue, green, yellow, orange, purple, or pink for each group.
 - Save to update highlights on open pages immediately.
-- Adds a floating on-page `Highlight` button with previous/next match navigation.
+- Adds a floating on-page results panel with previous/next match navigation.
 - Shows a light floating panel with one fully colored table row per active color, displaying the match position/total and previous/next arrows. Each row navigates only its own color and remembers its position independently. Colors with no matches have disabled arrows. Use **×** to close the control while keeping page highlights visible. It reappears at the top-right corner on the next scan or page reload.
-- Drag the floating button up, down, left, or right; it snaps to the nearest screen margin.
+- Drag the floating panel anywhere; it moves freely up and down and snaps to the nearest left or right screen margin.
 
 ## Load in Chrome
 
@@ -39,3 +39,13 @@ Use the **Results panel transparency** slider in the settings popup and click **
 Open or reload a web page, and the configured words will be highlighted automatically. Click **↻** next to **×** in the floating panel to scan the current page again without reloading it.
 
 After updating the extension, click its reload button in `chrome://extensions`, then reload any already-open pages. To highlight local files, enable **Allow access to file URLs** in the extension's details.
+
+## Matching Rules and Limitations
+
+- Matching is case-insensitive and whole-word, so `clear` does not match `clearance`.
+- Text inside `<code>`, `<pre>`, inputs, textareas, selects, and iframes is not highlighted.
+- Pages are scanned once when they finish loading. Pages that render content later (single-page apps and many job sites) may need **↻** in the floating panel to pick up new text.
+- Phrases are matched within a single text node, so a phrase split across tags (for example `security <b>clearance</b>`) is not matched.
+- Clicking the panel body, or pressing Enter or Space while it is focused, scans again. In the settings popup, Cmd/Ctrl+Enter saves.
+- Settings are stored in `chrome.storage.sync`, so they follow your Chrome profile across devices. The only permission requested is `storage`.
+- The extension runs on `http://`, `https://`, and `file://` pages.
