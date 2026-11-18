@@ -13,6 +13,16 @@ Chrome extension that automatically highlights keyword groups on web pages, with
 - Shows a light floating panel with one fully colored table row per active color, displaying the match position/total and previous/next arrows. Each row navigates only its own color and remembers its position independently. Colors with no matches have disabled arrows. Use **×** to close the control while keeping page highlights visible. It reappears at the top-right corner on the next scan or page reload.
 - Drag the floating panel anywhere; it moves freely up and down and snaps to the nearest left or right screen margin.
 
+## Screenshots
+
+Highlighted keywords on a sample job posting, with the floating results panel (one row per color, with its own match counter and prev/next arrows):
+
+![Highlighted keywords and floating results panel](docs/page-highlights.png)
+
+The settings popup, with keyword groups, colors, the On/Off switch, and panel transparency:
+
+<img src="docs/settings-popup.png" alt="Settings popup" width="380">
+
 ## Load in Chrome
 
 1. Open `chrome://extensions`.
