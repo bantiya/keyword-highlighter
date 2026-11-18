@@ -63,3 +63,7 @@ After updating the extension, click its reload button in `chrome://extensions`, 
 - Clicking the panel body, or pressing Enter or Space while it is focused, scans again. In the settings popup, Cmd/Ctrl+Enter saves.
 - Settings are stored in `chrome.storage.sync`, so they follow your Chrome profile across devices. The only permission requested is `storage`.
 - The extension runs on `http://`, `https://`, and `file://` pages.
+
+## License
+
+Released under the [MIT License](LICENSE).
