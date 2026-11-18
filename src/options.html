@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keyword Highlighter Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header class="popup-header">
+        <h1>Keyword Highlighter</h1>
+        <label class="extension-toggle">
+          <span id="extension-state">On</span>
+          <input id="extension-enabled" type="checkbox" role="switch" aria-label="Enable extension" aria-describedby="extension-help" checked disabled>
+          <span class="switch-track" aria-hidden="true"></span>
+        </label>
+      </header>
+      <p class="intro">Automatically highlight your keywords on web pages.</p>
+      <p id="extension-help">Turn off to pause highlighting on all pages. Changes apply immediately.</p>
+      <section aria-label="Keyword groups">
+        <label class="select-all-label">
+          <input id="select-all" class="group-enabled" type="checkbox" disabled>
+          Select all
+        </label>
+        <div id="groups"></div>
+        <button id="add-group" type="button" aria-label="Add keyword group" title="Add keyword group">+</button>
+        <p id="words-help">Separate keywords with commas. Select the circles to enable groups, then Save.</p>
+      </section>
+      <template id="group-template">
+        <div class="keyword-group">
+          <input class="group-enabled" type="checkbox" checked aria-label="Enable keyword group">
+          <div class="group-fields">
+            <div class="settings-row">
+              <div class="keywords-field">
+                <textarea spellcheck="false" rows="2" placeholder="Keywords, separated by commas" aria-label="Keywords (comma-separated)" aria-describedby="words-help"></textarea>
+              </div>
+              <div class="color-field">
+                <select aria-label="Highlight color"></select>
+                <button class="remove-group" type="button" aria-label="Remove keyword group">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <div class="transparency-control">
+        <label for="panel-transparency">Results panel transparency <output id="transparency-value" for="panel-transparency">0%</output></label>
+        <input id="panel-transparency" type="range" min="0" max="100" step="5" value="0" disabled>
+        <div class="range-labels"><span>Solid</span><span>Transparent</span></div>
+      </div>
+      <div class="actions">
+        <button id="save" type="button">Save</button>
+        <span id="status" role="status" aria-live="polite"></span>
+      </div>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
